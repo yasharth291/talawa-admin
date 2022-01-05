@@ -29,7 +29,7 @@ jobs:
       - name: Run tests
         run: yarn test
   Code-Coverage:
-    name: Code coverage
+    name: code coverage
     runs-on: ubuntu-latest
     steps:
       - name: Checkout 🛎
