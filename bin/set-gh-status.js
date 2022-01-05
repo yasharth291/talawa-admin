@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-// @ts-check
+// @ts-nocheck
 
 const got = require('got')
 const debug = require('debug')('check-code-coverage')
