@@ -7,6 +7,7 @@ import {
   ApolloProvider,
   InMemoryCache,
 } from '@apollo/client';
+import userEvent from '@testing-library/user-event';
 
 const client: ApolloClient<NormalizedCacheObject> = new ApolloClient({
   cache: new InMemoryCache(),
@@ -34,8 +35,6 @@ describe('Testing Member Request Card', () => {
     expect(screen.getByText('07/04/2019')).toBeInTheDocument();
     expect(screen.getByText('xyz@gmail.com')).toBeInTheDocument();
   });
-<<<<<<< Updated upstream
-=======
 
   test('should show modal when the button is clicked', () => {
     render(
@@ -82,5 +81,4 @@ describe('Testing Member Request Card', () => {
       await screen.queryByText('Are you sure you want to Reject Member')
     ).toBeNull();
   });
->>>>>>> Stashed changes
 });

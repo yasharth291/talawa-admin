@@ -40,8 +40,6 @@ describe('Testing Event List Card', () => {
     expect(screen.getByText('07/04/2020')).toBeInTheDocument();
     expect(screen.getByText('3')).toBeInTheDocument();
   });
-<<<<<<< Updated upstream
-=======
 
   test('should show modal when the button is clicked', () => {
     render(
@@ -92,5 +90,4 @@ describe('Testing Event List Card', () => {
       await screen.queryByText('Are you sure you want to delete this event')
     ).toBeNull();
   });
->>>>>>> Stashed changes
 });
