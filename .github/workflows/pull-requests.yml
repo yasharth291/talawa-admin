@@ -39,15 +39,6 @@ jobs:
                 "description": "REST commit status",
                 "context": "a test"
               }'
-      - name: Set code coverage commit status 📫
-        run: node bin/set-gh-status
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-      - name: Check coverage change from README 📫
-        run: node bin/set-gh-status --check-against-readme
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Update code coverage badge 🥇
         run: node bin/update-badge
