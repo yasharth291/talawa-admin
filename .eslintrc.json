@@ -28,13 +28,9 @@
   // Specify the ESLint plugins tobe used
   "plugins": ["react", "@typescript-eslint", "react-hooks", "jest"],
   "rules": {
-<<<<<<< Updated upstream
     "react/destructuring-assignment": ["off"],
     "@typescript-eslint/no-explicit-any": ["off"],
     "@typescript-eslint/explicit-module-boundary-types": ["off"],
-=======
-    "react/destructuring-assignment": ["warn", "always"],
->>>>>>> Stashed changes
     "react/no-multi-comp": [
       "error",
       {
