@@ -16,6 +16,7 @@ jobs:
       - name: Install NPM dependencies 📦
         uses: bahmutov/npm-install@v1
 
+
       - name: Check all covered files 📊
         run: |
           node bin/check-coverage main1.js
