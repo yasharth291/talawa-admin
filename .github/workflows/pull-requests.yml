@@ -7,6 +7,7 @@ on:
     branches:
       - '**'      
 jobs:
+
   
   Linter:
     name: Lints the code
