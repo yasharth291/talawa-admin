@@ -34,4 +34,53 @@ describe('Testing Member Request Card', () => {
     expect(screen.getByText('07/04/2019')).toBeInTheDocument();
     expect(screen.getByText('xyz@gmail.com')).toBeInTheDocument();
   });
+<<<<<<< Updated upstream
+=======
+
+  test('should show modal when the button is clicked', () => {
+    render(
+      <ApolloProvider client={client}>
+        <MemberRequestCard
+          key="123"
+          id=""
+          memberName="Saumya Singh"
+          memberLocation="India"
+          joinDate="07/04/2019"
+          memberImage=""
+          email="xyz@gmail.com"
+        />
+      </ApolloProvider>
+    );
+    userEvent.click(screen.getByText('Reject', { selector: 'button' }));
+    expect(
+      screen.getByText('Are you sure you want to Reject Member')
+    ).toBeInTheDocument();
+  });
+
+  test('should perform appropriate task ok clicking okay', async () => {
+    render(
+      <ApolloProvider client={client}>
+        <MemberRequestCard
+          key="123"
+          id=""
+          memberName="Saumya Singh"
+          memberLocation="India"
+          joinDate="07/04/2019"
+          memberImage=""
+          email="xyz@gmail.com"
+        />
+        <ModalResponse
+          show={true}
+          message=""
+          handleClose={() => {}}
+          handleContinue={() => {}}
+        />
+      </ApolloProvider>
+    );
+    userEvent.click(screen.getByText('Okay', { selector: 'button' }));
+    expect(
+      await screen.queryByText('Are you sure you want to Reject Member')
+    ).toBeNull();
+  });
+>>>>>>> Stashed changes
 });

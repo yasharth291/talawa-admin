@@ -32,4 +32,51 @@ describe('Testing User List Card', () => {
     expect(screen.getByText('India')).toBeInTheDocument();
     expect(screen.getByText('04/07/2019')).toBeInTheDocument();
   });
+<<<<<<< Updated upstream
+=======
+
+  test('should show modal when the button is clicked', () => {
+    render(
+      <ApolloProvider client={client}>
+        <UserListCard
+          key="123"
+          id=""
+          memberName="Dogs Care"
+          memberLocation="India"
+          joinDate="04/07/2019"
+          memberImage=""
+        />
+      </ApolloProvider>
+    );
+    userEvent.click(screen.getByText('Add Admin', { selector: 'button' }));
+    expect(
+      screen.getByText('Are you sure you want to add Admin')
+    ).toBeInTheDocument();
+  });
+
+  test('should perform appropriate task ok clicking okay', async () => {
+    render(
+      <ApolloProvider client={client}>
+        <UserListCard
+          key="123"
+          id=""
+          memberName="Dogs Care"
+          memberLocation="India"
+          joinDate="04/07/2019"
+          memberImage=""
+        />
+        <ModalResponse
+          show={true}
+          message=""
+          handleClose={() => {}}
+          handleContinue={() => {}}
+        />
+      </ApolloProvider>
+    );
+    userEvent.click(screen.getByText('Okay', { selector: 'button' }));
+    expect(
+      await screen.queryByText('Are you sure you want to add Admin')
+    ).toBeNull();
+  });
+>>>>>>> Stashed changes
 });

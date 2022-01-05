@@ -40,4 +40,57 @@ describe('Testing Event List Card', () => {
     expect(screen.getByText('07/04/2020')).toBeInTheDocument();
     expect(screen.getByText('3')).toBeInTheDocument();
   });
+<<<<<<< Updated upstream
+=======
+
+  test('should show modal when the button is clicked', () => {
+    render(
+      <ApolloProvider client={client}>
+        <EventListCard
+          key="123"
+          id=""
+          eventLocation="Gujarat"
+          eventName="Shelter for Dogs"
+          totalAdmin="5"
+          totalMember="107"
+          eventImage=""
+          regDate="07/04/2020"
+          regDays="3"
+        />
+      </ApolloProvider>
+    );
+    userEvent.click(screen.getByText('Delete', { selector: 'button' }));
+    expect(
+      screen.getByText('Are you sure you want to delete this event')
+    ).toBeInTheDocument();
+  });
+
+  test('should delete event when okay is clicked', async () => {
+    render(
+      <ApolloProvider client={client}>
+        <EventListCard
+          key="123"
+          id=""
+          eventLocation="Gujarat"
+          eventName="Shelter for Dogs"
+          totalAdmin="5"
+          totalMember="107"
+          eventImage=""
+          regDate="07/04/2020"
+          regDays="3"
+        />
+        <ModalResponse
+          show={true}
+          message=""
+          handleClose={() => {}}
+          handleContinue={() => {}}
+        />
+      </ApolloProvider>
+    );
+    userEvent.click(screen.getByText('Okay', { selector: 'button' }));
+    expect(
+      await screen.queryByText('Are you sure you want to delete this event')
+    ).toBeNull();
+  });
+>>>>>>> Stashed changes
 });
