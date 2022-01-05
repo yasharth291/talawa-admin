@@ -29,17 +29,17 @@ jobs:
       - name: Run tests
         run: yarn test
   Code-Coverage:
-    name: ci
+    name: Code coverage
     runs-on: ubuntu-latest
     steps:
       - name: Checkout 🛎
         uses: actions/checkout@v2
 
       - name: Install NPM dependencies 📦
-        uses: bahmutov/npm-install@v1
+        uses: yarn
 
       - name: Unit tests 🧪
-        run: npm test
+        run: yarn test
 
       - name: Check all covered files 📊
         run: |
