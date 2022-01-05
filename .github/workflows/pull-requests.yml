@@ -7,16 +7,6 @@ on:
     branches:
       - '**'      
 jobs:
-  
-  Linter:
-    name: Lints the code
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-      - name: Install Dependencies
-        run: yarn
-      - name: Run ESLint 
-        run: yarn lint
 
   Continuous-Integration:
     name: continuous integration on pull request
